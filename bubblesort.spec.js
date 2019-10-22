@@ -26,3 +26,24 @@ describe('Bubble Sort', function() {
   });
 
 });
+
+describe('Split Array function', function () {
+  it('returns an empty array if array is empty', function () {
+    expect(split([])).toEqual([])
+  });
+  it('returns array if length is one', function () {
+    expect(split([1])).toEqual([1])
+  });
+  it('is able to split an odd array into two halves', function () {
+    expect(split([1, 5, 7, 3, 4])).toEqual([[1, 5], [7, 3, 4]])
+  });
+  it('is able to split an even array into two halves', function () {
+    expect(split([1, 5, 7, 3, 4, 9])).toEqual([[1, 5, 7], [3, 4, 9]])
+  });
+});
+
+describe('Merge function', function () {
+  it('is able to merge two sorted arrays into one sorted array', function () {
+    expect(merge([3, 27, 38, 43], [9, 10, 82])).toEqual([3, 9, 10, 27, 38, 43, 82])
+  });
+});
